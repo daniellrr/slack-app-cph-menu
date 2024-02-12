@@ -44,7 +44,7 @@ def main():
     if menu_items:
         print(f"Menu for {get_today_danish()}: \n")
         for item in menu_items:
-            print(f"- {item}")
+            print(f" {item}")
 
 main()
 
@@ -92,5 +92,5 @@ for index, restaurant_section in enumerate(restaurant_sections, start=1):
         for day, items in menu.items():
             #print(f"{day.capitalize()}:")
             for item in items:
-                print(f"- {item}")
+                print(f" {item}")
         print("\n")
