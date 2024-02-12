@@ -42,11 +42,9 @@ def extract_menu_for_today(soup):
 def main():
     menu_items = extract_menu_for_today(soup)
     if menu_items:
-        print(f"Menu for {get_today_danish()}:")
+        print(f"Menu for {get_today_danish()}: \n")
         for item in menu_items:
             print(f"- {item}")
-    else:
-        print("No menu found for the current day.")
 
 main()
 
