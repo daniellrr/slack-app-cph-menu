@@ -11,15 +11,12 @@ url = 'https://www.foodandco.dk/besog-os-her/restauranter/ku/sondre-campus/'
 # Use the requests library to fetch the web page content
 response = requests.get(url)
 
-# Now, response.text contains the HTML content
+# response.text contains the HTML content
 html_content = response.text
 
 # Function to get the Danish name for the current day of the week
 def get_today_danish():
     return datetime.now().strftime('%A')  # '%A' gives the full weekday name
-
-# Simulated HTML content (replace this with `requests.get(url).text` for actual fetching)
-
 
 soup = BeautifulSoup(html_content, 'html.parser')
 
@@ -50,7 +47,7 @@ main()
 
 # Function to extract the menu for a given restaurant section
 def extract_menu(restaurant_section):
-    today = datetime.now().strftime("%A").lower()  # Get the current day in lowercase (e.g., 'monday')
+    today = datetime.now().strftime("%A").lower()  # Get the current day in lowercase
     menu = {}  # Dictionary to hold the menu items
 
     # Find all day sections within the restaurant section
@@ -80,6 +77,7 @@ soup = BeautifulSoup(html_content, 'html.parser')
 restaurant_sections = soup.find_all("div", class_="ContentBlock")
 
 for index, restaurant_section in enumerate(restaurant_sections, start=1):
+    #print(restaurant_section)
     menu = extract_menu(restaurant_section)
     if menu:
         today_danish = get_today_danish()
