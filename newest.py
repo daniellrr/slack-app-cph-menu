@@ -74,12 +74,6 @@ def extract_menu(restaurant_section):
 
     return menu
 
-
-# Fetch the webpage content
-url = 'https://www.foodandco.dk/besog-os-her/restauranter/ku/sondre-campus/'
-response = requests.get(url)
-html_content = response.text
-
 soup = BeautifulSoup(html_content, 'html.parser')
 
 # Find all restaurant sections in the HTML
