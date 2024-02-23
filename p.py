@@ -13,7 +13,7 @@ response = requests.get(url)
 html_content = response.text
 
 # Slack webhook URL
-slack_webhook_url = 'https://hooks.slack.com/services/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'
+
 
 def get_today_danish():
     return datetime.now().strftime('%A')
